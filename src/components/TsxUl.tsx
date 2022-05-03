@@ -1,15 +1,19 @@
 import Li from './TsxLi'
+import { ref } from 'vue'
+
+let data = ref<string>('')
 
 const arr = [
   { label: '哈哈', value: 1 },
   { label: '嘿嘿', value: 2 },
   { label: '呵呵', value: 3 },
 ]
-const clickTap = (order: number) => {
-    console.log('触发click' + order)
-}
 const getChildMsg = (msg: string) => {
-  console.log('接收到子组件数据', msg)
+  data.value = msg 
+  console.log('接收到子组件数据', )
+}
+const clickTap = (ctx: any, payload: any) => {
+  ctx.emit('onMsg', {value: payload, msg: data.value})
 }
 const renderDom = (props: any, ctx: any) => {
   return (
@@ -22,7 +26,7 @@ const renderDom = (props: any, ctx: any) => {
             data={item}
             style={{ listStyleType: 'none' }}
             getMsg={getChildMsg}
-            onClick={clickTap.bind(this, item.value)}
+            onClick={clickTap.bind(this, ctx, item.value)}
           >
             { item.label }
           </Li>
