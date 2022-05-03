@@ -8,6 +8,9 @@ const arr = [
 const clickTap = (order: number) => {
     console.log('触发click' + order)
 }
+const getChildMsg = (msg: string) => {
+  console.log('接收到子组件数据', msg)
+}
 const renderDom = (props: any, ctx: any) => {
   return (
     <div>
@@ -18,6 +21,7 @@ const renderDom = (props: any, ctx: any) => {
             class="demo"
             data={item}
             style={{ listStyleType: 'none' }}
+            getMsg={getChildMsg}
             onClick={clickTap.bind(this, item.value)}
           >
             { item.label }
