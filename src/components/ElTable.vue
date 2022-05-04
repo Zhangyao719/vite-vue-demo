@@ -18,6 +18,11 @@
 </template>
 
 <script lang="ts" setup>
+import useStore from '@/store'
+import { storeToRefs } from 'pinia'
+const { test } = useStore()
+const { name, state } = storeToRefs(test)
+
 const handleClick = () => {
   console.log('click')
 }
@@ -25,8 +30,8 @@ const handleClick = () => {
 const tableData = [
   {
     date: '2016-05-03',
-    name: 'Tom',
-    state: 'California',
+    name,
+    state,
     city: 'Los Angeles',
     address: 'No. 189, Grove St, Los Angeles',
     zip: 'CA 90036',
