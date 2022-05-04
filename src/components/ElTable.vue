@@ -25,6 +25,9 @@ const { name, state } = storeToRefs(test)
 
 const handleClick = () => {
   console.log('click')
+  test.$patch((state) => {
+       state.name = 'Kobe';
+    })
 }
 
 const tableData = [
