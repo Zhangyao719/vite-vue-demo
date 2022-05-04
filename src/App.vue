@@ -3,6 +3,7 @@
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
 import HelloWorld from './components/HelloWorld.vue'
 import TsxUl from './components/TsxUl'
+import EleTable from './components/ElTable.vue'
 
 const onMessage = (msg: string) => {
   console.log('🚀 → 接收ul的msg：', msg)
@@ -13,6 +14,7 @@ const onMessage = (msg: string) => {
   <img alt="Vue logo" src="./assets/logo.png" />
   <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
   <TsxUl @onMsg="onMessage" />
+  <EleTable />
 </template>
 
 <style>
