@@ -1,12 +1,11 @@
 import { defineConfig } from 'vite'
 import { resolve } from 'path'
-
 // support tsx
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx';
-
-// element 按需导入
+// vue自动导入
 import AutoImport from 'unplugin-auto-import/vite'
+// element 按需导入
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 
@@ -20,6 +19,8 @@ export default defineConfig({
 
     // element 按需导入
     AutoImport({
+      imports:['vue'],
+      dts: "src/auto-import.d.ts",
       resolvers: [ElementPlusResolver()],
     }),
     Components({
