@@ -1,5 +1,11 @@
+import { ElMessage } from 'element-plus'
+
 const handleClick = (props: any, msg: string) => {
   props.getMsg(msg)
+  ElMessage({
+    message: 'Congrats, this is a success message.',
+    type: 'success',
+  })
 }
 const renderDom = (props: any) => {
   return (
