@@ -1,0 +1,35 @@
+{
+    "root": true,
+    "parser": "vue-eslint-parser",
+    "parserOptions": {
+      "parser": "@typescript-eslint/parser",
+      "sourceType": "module",
+      "ecmaVersion": 2018,
+      "ecmaFeatures": {
+        "globalReturn": false,
+        "impliedStrict": false,
+        "jsx": false
+      }
+    },
+    "extends": [
+      "plugin:@typescript-eslint/recommended",
+      // "@vue/eslint-config-prettier"
+    ],
+    "rules": {
+      // "@typescript-eslint/ban-ts-comment": ["off"],
+      "@typescript-eslint/no-non-null-assertion": ["off"], // 允许 .！非空断言
+      "@typescript-eslint/no-explicit-any": ["off"], // 允许any
+      "@typescript-eslint/explicit-module-boundary-types": ["off"], // 函数无需注解返回值类型
+      "semi": [2, "always"], //语句强制分号结尾
+      "indent": [2, 2, { "SwitchCase": 1 }],
+      "no-multi-spaces": 2, // 没有多余空格
+      "space-before-function-paren": ["error", {
+        "anonymous": "always", // 匿名函数 '(' 前 需要空格
+        "named": "never" // 具名函数 '(' 前 无需空格
+      }],
+      "arrow-spacing": [ // 箭头函数 => 前后必须空格
+        2,
+        { "before": true, "after": true }
+      ]
+    }
+  }

@@ -18,17 +18,17 @@
 </template>
 
 <script lang="ts" setup>
-import useStore from '@/store'
-import { storeToRefs } from 'pinia'
-const { test } = useStore()
-const { name, state } = storeToRefs(test)
+import useStore from '@/store';
+import { storeToRefs } from 'pinia';
+const { test } = useStore();
+const { name, state } = storeToRefs(test);
 
 const handleClick = () => {
-  console.log('click')
+  console.log('click');
   test.$patch((state) => {
-       state.name = 'Kobe';
-    })
-}
+    state.name = 'Kobe';
+  });
+};
 
 const tableData = [
   {
@@ -67,5 +67,5 @@ const tableData = [
     zip: 'CA 90036',
     tag: 'Office',
   },
-]
+];
 </script>
